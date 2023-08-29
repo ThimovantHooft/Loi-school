@@ -1,0 +1,36 @@
+Opdracht
+(max. 7 punten)
+U levert het Memory game waar u eerder mee geoefend hebt op. Als u dit nog niet gedaan hebt, moet u dat alsnog doen om verder te kunnen. Voor de volledigheid hier de beide opdrachten:
+Opdracht 1
+
+U gaat een begin maken met een compleet spel in JavaScript, een memory game! Om te beginnen, gaat u de kaartjes die in een array geplaatst zijn zichtbaar maken door ze met de geleerde DOM methods toe te voegen aan de DOM. U gaat onder andere gebruikmaken van:
+Open de folder memory_start uit de map met oefenbestanden in VSC (zie de Mediatheek onder Bestanden oefeningen SA).
+Bestudeer de HTML en de CSS zodat u een beeld krijgt bij wat u aangeleverd hebt gekregen.
+Open memory.js en bekijk de commentaarcode. Probeer eerst een goed beeld te krijgen van wat de bedoeling is. Voer de hierin beschreven stappen vervolgens nauwkeurig uit. Lees ze goed, en herlees ze desnoods nog een keer zodat u precies weet wat er van u verwacht wordt. De programmaregel van het array myCardSet krijgt u alvast.
+Bestudeer eventueel de desbetreffende materie nogmaals vóór u een regel code programmeert.
+Als het goed is uitgevoerd, ziet u in de browser de kaartjes allemaal verschijnen. Als u op een kaartje klikt, verschijnt de naam van het dier in de console.
+Gebruik de technieken die u eerder geleerd hebt om te debuggen. In de map memory-Result vindt u het resultaat, maar gebruik deze alleen om het resultaat te controleren of als u er helemaal niet uit komt.
+Als extra uitdaging kunt u de loop met de volgende statements uitvoeren:
+
+
+Opdracht 2
+
+Maak in uw script van de memory game (van de vorige oefening) een nieuwe class 'Card' aan met als properties card1, card2, set en sound. Op deze manier zou u dit object ook kunnen gebruiken voor een spel waar u twee verschillende kaartjes van één set moet matchen en zou u een geluid kunnen afspelen, bijvoorbeeld een dierengeluid bij het spel met dieren. Alleen argument card1 is verplicht, de rest is optioneel. U hebt nog geen kennisgemaakt met optionele (default-)argumenten, meer informatie hierover vindt u hier https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters.
+Zorg ervoor dat card2, set en sound als defaultwaarde dezelfde waarde krijgen als image1. Dit kunt u gewoon tussen de haakjes van de class doen! Dit heeft als resultaat dat als u alleen de naam van card1 invoert, voor zowel card2 als sound naar dezelfde benaming wordt gezocht als voor card1. Mochten de geluidsbestanden echter anders heten dan kunnen de afwijkende benamingen ingevoerd worden.
+Hernoem het array myCardSet naar myCardArray en maak een nieuw array myCardSet met deze Card-objecten. Dit kunt u op twee manieren doen, handmatig of met een loop. Slaagt u er in om met de map() method een nieuw array met Card-objecten te bouwen vanuit myCardArray? U kunt met uw eigen oefening verder gaan, of de map memory_2.5/start als uitgangspunt nemen. Het eindresultaat vindt u in de map memory_2.5/result.
+Als het goed is, hebt u in ieder geval een complete set met kaartjes op het scherm staan die u aan kunt klikken waarna een melding in de console verschijnt.
+Om te beginnen, de kaarten moeten verdubbeld worden, anders is er geen sprake van een memory game, de speler moet immers twee gelijke kaarten vinden. De eerste stap is het verdubbelen van de array met één van de array methods. Welke u moet gebruiken? Dat moet u zelf uitzoeken.
+Vervolgens moet de resulterende set kaarten random over het array verdeeld worden. De kaarten van een memory game zijn immers eerst geschud en worden dan pas neergelegd. Dit schudden kan eenvoudig met JavaScript. Er is zelfs een optimale 'shuffle' bedacht, de Fisher-Yates shuffle.
+Deze vindt u hier uitgewerkt in JavaScript, op een pagina geschreven door niemand minder dan Mike Bostock, het brein achter het D3JS framework.
+Implementeer deze shuffle als functie in uw script. Gebruik deze vervolgens om myCardArray te 'schudden' vóór u dit omzet naar een array met Card Objecten.
+Het resultaat is een pagina met een complete set (dubbele) kaartjes die na een page refresh compleet anders neergelegd is.
+
+De beoordelingscriteria:
+
+In de code is een class 'Card' gemaakt.
+Deze class heeft de properties card1, card2, set en sound.
+Alleen de property card1 moet tijdens instantiëren ingevoerd worden, card2, set en sound krijgen card1 als defaultwaarde.
+De array myCardSet wordt verdubbeld m.b.v. de array method concat() of een alternatieve oplossing.
+De functie shuffle() (de Fisher-Yates shuffle) is geïmplementeerd en werkt.
+Met de map() method wordt de myDblCardArray naar een myCardSet getransformeerd, bestaande uit Card-objecten.
+Het script werkt foutloos.
