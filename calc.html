@@ -114,24 +114,27 @@
         const myInput = document.getElementById("result");
         const myOperator = document.getElementById("operator");
         let previousValue = '';
+        let resultJN = 'N';
 
         function addNumber(clickedNumber) {
             if (clickedNumber === '.' && myInput.value.includes('.')) return;
-            myInput.value += clickedNumber;
+            if(resultJN == "J")
+            {
+                resultJN = 'N';
+                myInput.value = clickedNumber;    
+            }else{
+                myInput.value += clickedNumber;
+            }
         }
 
         function onClickOperator(operator) {
-            if (myInput.value === '') return
-
-            previousValue = myInput.value
             myOperator.value = operator;
-            myInput.value = '';
-
             if(previousValue !== "")
             {
                 calculate();
-                return
-            }        
+            }
+            previousValue = myInput.value;
+            myInput.value = '';
         }
 
         function onClickCancel(evt) {
@@ -139,9 +142,17 @@
             myInput.value = "";
             myOperator.value = "";
         }
+
         function onClickEquals() {
-           
+            if(previousValue != '')
+            {
+                resultJN = 'J';
+                calculate();
+                previousValue = '';
+                myOperator.value = '';
+            }
         }
+        
         function calculate()
         {
             let result;
@@ -164,9 +175,11 @@
                     result = prev / current;
                     break
                 default: 
-                    return
-                    
+                    return;
             }
+
+            myInput.value = result.toString();
+            
         }
     </script>
 </body>
